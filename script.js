@@ -25,14 +25,15 @@ const hour3Events = document.querySelector('#hour-3-events')
 const hour4Events = document.querySelector('#hour-4-events')
 const hours = [hour9, hour10, hour11, hour12, hour1, hour2, hour3, hour4]
 const events = [hour9Events, hour10Events, hour11Events, hour12Events, hour1Events, hour2Events, hour3Events, hour4Events]
-const currentHour = 12;
+const currentHour = dayjs().hour()
+
+//GET file:///C:/Users/gscia/bootcamp/Daily-Planner/path/to/dayjs/dayjs.min.js net::ERR_FILE_NOT_FOUND
 
 const formatPage = () => {
-    currentDay.innerText = "12/25/2023" //change using day.js
-    let hour = 9 //change using day.js
+    currentDay.innerText = dayjs().format('MM/DD/YYYY')
+    let hour = 9
     for(i in hours){
         events[i].innerText = localStorage.getItem(events[i].id)
-        console.log(events[i].id)
         if(hour < currentHour){
             hours[i].setAttribute('class', 'row time-block past')
         }else if(hour === currentHour){
