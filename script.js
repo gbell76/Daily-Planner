@@ -27,10 +27,8 @@ const hours = [hour9, hour10, hour11, hour12, hour1, hour2, hour3, hour4]
 const events = [hour9Events, hour10Events, hour11Events, hour12Events, hour1Events, hour2Events, hour3Events, hour4Events]
 const currentHour = dayjs().hour()
 
-//GET file:///C:/Users/gscia/bootcamp/Daily-Planner/path/to/dayjs/dayjs.min.js net::ERR_FILE_NOT_FOUND
-
 const formatPage = () => {
-    currentDay.innerText = dayjs().format('MM/DD/YYYY')
+    currentDay.innerText = dayjs().format('dddd, MMMM D, YYYY')
     let hour = 9
     for(i in hours){
         events[i].innerText = localStorage.getItem(events[i].id)
